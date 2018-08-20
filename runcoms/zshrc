@@ -52,3 +52,5 @@ fi
 
 # time aliases
 alias 8601="date -u +\"%FT%TZ\""
+
+#git aliases

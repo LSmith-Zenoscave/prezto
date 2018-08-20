@@ -36,6 +36,8 @@ zstyle ':prezto:load' pmodule \
   'utility' \
   'completion' \
   'archive' \
+  'docker' \
+  'python' \
   'git' \
   'ssh' \
   'syntax-highlighting' \
@@ -142,10 +144,10 @@ zstyle ':prezto:module:prompt' pwd-length 'short'
 #
 
 # Auto switch the Python virtualenv on directory change.
-# zstyle ':prezto:module:python:virtualenv' auto-switch 'yes'
+zstyle ':prezto:module:python:virtualenv' auto-switch 'yes'
 
 # Automatically initialize virtualenvwrapper if pre-requisites are met.
-# zstyle ':prezto:module:python:virtualenv' initialize 'yes'
+zstyle ':prezto:module:python:virtualenv' initialize 'yes'
 
 #
 # Screen
@@ -175,7 +177,6 @@ zstyle ':prezto:module:syntax-highlighting' highlighters \
    'brackets' \
    'pattern' \
    'line' \
-   'cursor' \
    'root'
 #
 # Set syntax highlighting styles.
