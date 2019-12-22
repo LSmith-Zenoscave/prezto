@@ -17,8 +17,8 @@ fi
 # Editors
 #
 
-export EDITOR='nano'
-export VISUAL='nano'
+export EDITOR='vi'
+export VISUAL='vi'
 export PAGER='less'
 
 #
@@ -71,3 +71,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/zsh_completion" ] && source "$NVM_DIR/zsh_completion"  # This loads nvm bash_completion
 
+#
+# Virtualenvwrapper
+#
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+[ -s virtualenvwrapper.sh ] && source virtualenvwrapper.sh
