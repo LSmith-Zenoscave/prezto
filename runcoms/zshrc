@@ -56,7 +56,5 @@ alias 8601="date -u +\"%FT%TZ\""
 #emacs aliases and exports
 alias ds="emacs --daemon"
 alias emt="emacsclient -t"
-export VISUAL="emacsclient -c"
-export EDITOR="emacsclient -t"
 
 #git aliases
