@@ -53,8 +53,7 @@ fi
 # time aliases
 alias 8601="date -u +\"%FT%TZ\""
 
-#emacs aliases and exports
-alias ds="emacs --daemon"
-alias emt="emacsclient -t"
-
-#git aliases
+function chpwd() {
+    print -Pn "\e]2;%d\007"
+    ls
+}
