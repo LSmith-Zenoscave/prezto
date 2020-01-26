@@ -58,4 +58,6 @@ function chpwd() {
     ls
 }
 
-[[ -f "${HOME}/.sdkman/bin/sdkman-init.sh" ]] && source "${HOME}/.sdkman/bin/sdkman-init.sh" || true
+if [[ -f "${HOME}/.sdkman/bin/sdkman-init.sh" ]] ; then
+  source "${HOME}/.sdkman/bin/sdkman-init.sh"
+fi
