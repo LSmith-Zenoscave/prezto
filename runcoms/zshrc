@@ -12,6 +12,9 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+export GOPATH="${HOME}/go"
+export PATH="${GOPATH}/bin:${PATH}"
+
 
 # Disable username in prompt
 DEFAULT_USER="$(whoami)"
@@ -61,3 +64,6 @@ function chpwd() {
 if [[ -f "${HOME}/.sdkman/bin/sdkman-init.sh" ]] ; then
   source "${HOME}/.sdkman/bin/sdkman-init.sh"
 fi
+
+# added by travis gem
+[ -f /Users/lsmith/.travis/travis.sh ] && source /Users/lsmith/.travis/travis.sh
