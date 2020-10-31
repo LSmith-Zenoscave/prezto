@@ -61,9 +61,21 @@ function chpwd() {
     ls
 }
 
+function poetry() {
+    if [[ -z "${POETRY_DONT_LOAD_ENV}" && -f ".env" ]] ; then
+	eval $(grep -v '^(\s*#|$)' .env | xargs) command poetry "$@"
+    else
+    	command poetry "$@"
+    fi
+}
+
 if [[ -f "${HOME}/.sdkman/bin/sdkman-init.sh" ]] ; then
   source "${HOME}/.sdkman/bin/sdkman-init.sh"
 fi
 
 # added by travis gem
 [ -f /Users/lsmith/.travis/travis.sh ] && source /Users/lsmith/.travis/travis.sh
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+function gi() { curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ ;}

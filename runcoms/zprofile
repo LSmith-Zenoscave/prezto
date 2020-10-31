@@ -75,4 +75,8 @@ export NVM_DIR="$HOME/.nvm"
 # Virtualenvwrapper
 #
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-[ -s virtualenvwrapper.sh ] && source virtualenvwrapper.sh
+[ -s $(which virtualenvwrapper.sh) ] && source virtualenvwrapper.sh || echo VirtualenvWrapper not found
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
