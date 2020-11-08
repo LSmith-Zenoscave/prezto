@@ -72,11 +72,12 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/zsh_completion" ] && source "$NVM_DIR/zsh_completion"  # This loads nvm bash_completion
 
 #
-# Virtualenvwrapper
+# PyEnv
 #
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-[ -s $(which virtualenvwrapper.sh) ] && source virtualenvwrapper.sh || echo VirtualenvWrapper not found
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
+if [ -d "$HOME/.oetry/bin" ] ; then
+  export PATH="$HOME/.poetry/bin:$PATH"
+fi

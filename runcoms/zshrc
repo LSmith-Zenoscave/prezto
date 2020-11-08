@@ -37,7 +37,6 @@ fi
 if (( $+commands[tmux] )); then
   function ttmux () {
     if (( ${+TMUX} )); then
-      echo "Don't nest tmux sessions with this exec method."
       return
     fi
     exec "tmux" "new-session" "-A" "-s" "tmux"
@@ -45,7 +44,6 @@ if (( $+commands[tmux] )); then
 
   function codemux () {
     if (( ${+TMUX} )); then
-      echo "Don't nest tmux sessions with this exec method."
       return
     fi
     local dir="$(basename "$(pwd)" | sed "s/[^[:alpha:]^[:digit:]]//g")"
@@ -79,3 +77,5 @@ fi
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 function gi() { curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ ;}
+
+ttmux
