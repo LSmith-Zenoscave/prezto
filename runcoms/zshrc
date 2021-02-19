@@ -74,8 +74,11 @@ fi
 # added by travis gem
 [ -f /Users/lsmith/.travis/travis.sh ] && source /Users/lsmith/.travis/travis.sh
 
+export VIRTUALENV_PYTHON="$HOME/.pyenv/shims/python"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-function gi() { curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ ;}
+function gi() { curl -sLw $'\n'  https://www.toptal.com/developers/gitignore/api/$@ ;}
 
-ttmux
+# ttmux
+
+export PATH="$HOME/.poetry/bin:$PATH"
